@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.6/dist/aframe-transparent-video-shader.umd.js"></script>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: ./targets.mind; filterMinCF:0.00025; filterBeta: 0.0008" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+        <a-asset-item id="0" src="/public/0.gltf"></a-asset-item>
+        <a-asset-item id="1" src="/public/1.gltf"></a-asset-item>
+        <a-asset-item id="2" src="/public/2.gltf"></a-asset-item>
+        <a-asset-item id="3" src="/public/3.gltf"></a-asset-item>
+        <a-asset-item id="4" src="/public/4.gltf"></a-asset-item>
+        <a-asset-item id="5" src="/public/5.gltf"></a-asset-item>
+        <a-asset-item id="6" src="/public/6.gltf"></a-asset-item>
+        <a-asset-item id="7" src="/public/7.gltf"></a-asset-item>
+        <a-asset-item id="8" src="/public/8.gltf"></a-asset-item>
+        <a-asset-item id="9" src="/public/9.gltf"></a-asset-item>
+        <a-asset-item id="10" src="/public/10.gltf"></a-asset-item>
+        <a-asset-item id="11" src="/public/11.gltf"></a-asset-item>
+        <a-asset-item id="12" src="/public/12.gltf"></a-asset-item>
+        <a-asset-item id="13" src="/public/13.gltf"></a-asset-item>
+        <a-asset-item id="14" src="/public/14.gltf"></a-asset-item>
+        <a-asset-item id="15" src="/public/15.gltf"></a-asset-item>
+        <a-asset-item id="bearModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/band-example/bear/scene.gltf"></a-asset-item>
+        <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-entity rotation="90 0 0" gltf-model="#0" scale="0.0025 0.0025 0.0025">
+          <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+          </a-sound>    </a-entity>
+        </a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 1">
+      <a-entity rotation="90 0 0" gltf-model="#0" scale="0.0025 0.0025 0.0025">
+        <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+        </a-sound>    </a-entity>
+</a-entity>
+
+  <a-entity mindar-image-target="targetIndex: 2">
+    <a-entity rotation="90 0 0" gltf-model="#2" scale="0.25 0.25 0.25">
+      <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+      </a-sound>    </a-entity>
+  </a-entity>
+
+<a-entity mindar-image-target="targetIndex: 3">
+  <a-entity rotation="90 0 0" gltf-model="#3" scale="0.25 0.25 0.25">
+    <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+    </a-sound>    </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 4">
+  <a-entity rotation="90 0 0" gltf-model="#4" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 5">
+  <a-entity rotation="90 0 0" gltf-model="#5" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 6">
+  <a-entity rotation="90 0 0" gltf-model="#6" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 7">
+  <a-entity rotation="90 0 0" gltf-model="#7" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 8">
+  <a-entity rotation="90 0 0" gltf-model="#8" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 9">
+  <a-entity rotation="90 0 0" gltf-model="#9" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 10">
+  <a-entity rotation="90 0 0" gltf-model="#10" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 11">
+  <a-entity rotation="90 0 0" gltf-model="#11" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 12">
+  <a-entity rotation="90 0 0" gltf-model="#12" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 13">
+  <a-entity rotation="90 0 0" gltf-model="#13" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 14">
+  <a-entity rotation="90 0 0" gltf-model="#14" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex: 15">
+  <a-entity rotation="90 0 0" gltf-model="#15" scale="0.25 0.25 0.25"></a-entity>
+  <a-sound src="src: url(public/CLM.mp3)" volume="0.1" on:>
+  </a-sound>
+</a-entity>
+
+
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#bearModel" animation-mixer>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
