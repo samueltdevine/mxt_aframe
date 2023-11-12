@@ -15,6 +15,7 @@
 	});
 
   const aCanvas = document.getElementsByClassName("a-canvas")
+
   function startAR(){
   const header = document.getElementById('header')
   const canvas = document.getElementById('canvas')
@@ -22,6 +23,9 @@
   // aCanvas.style.display = "block"
   arSystem.start()
 }
+
+
+
 const startButton = document.getElementById("startButton")
 startButton.addEventListener('click', startAR)
 
@@ -73,17 +77,132 @@ startButton.addEventListener('click', startAR)
 	  // console.log("MindAR failed to start")
 	});
 	// detect target found
+  var audio0 = new Audio('/public/0.mp3');
 	target0.addEventListener("targetFound", event => {
-    const sound = document.getElementById('0sound').components.sound
-    console.log("target found", sound);
-    sound.playSound()
-
+  audio0.play();
   });
-	// detect target lost
 	target0.addEventListener("targetLost", event => {
-    const sound = document.getElementById('0sound').components.sound
-    sound.pauseSound()
-	  console.log("target lost");
+    audio0.pause()
+	});
+
+  // var audio1 = new Audio('/public/1.mp3');
+	// target1.addEventListener("targetFound", event => {
+  // audio1.play();
+  // });
+	// target1.addEventListener("targetLost", event => {
+  //   audio1.pause()
+	// });
+
+  // var audio2 = new Audio('/public/2.mp3');
+	// target2.addEventListener("targetFound", event => {
+  // audio2.play();
+  // });
+	// target2.addEventListener("targetLost", event => {
+  //   audio2.pause()
+	// });
+
+  var audio3 = new Audio('/public/3.mp3');
+	target3.addEventListener("targetFound", event => {
+  audio3.play();
+  });
+	target3.addEventListener("targetLost", event => {
+    audio3.pause()
+	});
+
+  var audio4 = new Audio('/public/4.mp3');
+	target4.addEventListener("targetFound", event => {
+  audio4.play();
+  });
+	target4.addEventListener("targetLost", event => {
+    audio4.pause()
+	});
+
+  var audio5 = new Audio('/public/5.mp3');
+	target5.addEventListener("targetFound", event => {
+  audio5.play();
+  });
+	target5.addEventListener("targetLost", event => {
+    audio5.pause()
+	});
+
+  var audio6 = new Audio('/public/6.mp3');
+	target6.addEventListener("targetFound", event => {
+  audio6.play();
+  });
+	target6.addEventListener("targetLost", event => {
+    audio6.pause()
+	});
+
+  var audio7 = new Audio('/public/7.mp3');
+	target7.addEventListener("targetFound", event => {
+  audio7.play();
+  });
+	target7.addEventListener("targetLost", event => {
+    audio7.pause()
+	});
+
+  var audio8 = new Audio('/public/8.mp3');
+	target8.addEventListener("targetFound", event => {
+  audio8.play();
+  });
+	target8.addEventListener("targetLost", event => {
+    audio8.pause()
+	});
+
+  var audio9 = new Audio('/public/9.mp3');
+	target9.addEventListener("targetFound", event => {
+  audio9.play();
+  });
+	target9.addEventListener("targetLost", event => {
+    audio9.pause()
+	});
+
+  var audio10 = new Audio('/public/10.mp3');
+	target10.addEventListener("targetFound", event => {
+  audio10.play();
+  });
+	target10.addEventListener("targetLost", event => {
+    audio10.pause()
+	});
+
+  var audio11 = new Audio('/public/11.mp3');
+	target11.addEventListener("targetFound", event => {
+  audio11.play();
+  });
+	target11.addEventListener("targetLost", event => {
+    audio11.pause()
+	});
+
+  var audio12 = new Audio('/public/12.mp3');
+	target12.addEventListener("targetFound", event => {
+  audio12.play();
+  });
+	target12.addEventListener("targetLost", event => {
+    audio12.pause()
+	});
+
+  var audio13 = new Audio('/public/13.mp3');
+	target13.addEventListener("targetFound", event => {
+  audio13.play();
+  });
+	target13.addEventListener("targetLost", event => {
+    audio13.pause()
+	});
+
+  var audio14 = new Audio('/public/14.mp3');
+	target14.addEventListener("targetFound", event => {
+  audio14.play();
+  });
+	target14.addEventListener("targetLost", event => {
+    audio14.pause()
+	});
+
+  var audio15 = new Audio('/public/15.mp3');
+	target15.addEventListener("targetFound", event => {
+  audio15.play();
+  });
+	target15.addEventListener("targetLost", event => {
+    audio15.pause()
 	});
 
       });
@@ -180,7 +299,7 @@ startButton.addEventListener('click', startAR)
         <a-asset-item id="13" src="/public/13.gltf"></a-asset-item>
         <a-asset-item id="14" src="/public/14.gltf"></a-asset-item>
         <a-asset-item id="15" src="/public/15.gltf"></a-asset-item>
-        <!-- <audio id="audio0" src="url(/public/0.mp3)" preload="auto"></audio> -->
+        <!-- <audio id="audio0" src="/public/0.mp3" preload="auto"></audio> -->
         
         <a-asset-item id="bearModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/band-example/bear/scene.gltf"></a-asset-item>
         <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
@@ -188,100 +307,72 @@ startButton.addEventListener('click', startAR)
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-      <a-entity id="target0" mindar-image-target="targetIndex: 0" >
+      <a-entity id="target0" mindar-image-target="targetIndex: 0">
         <a-entity rotation="90 0 0" gltf-model="#0" scale="0.0025 0.0025 0.0025">
-          <a-sound id="0sound" src="src: url(/public/0.mp3)" volume="0.1" on:>
-          </a-sound>    </a-entity>
+  </a-entity>
         </a-entity>
 
-    <a-entity id="target1" mindar-image-target="targetIndex: 1">
+    <a-entity id="target1" mindar-image-target="targetIndex: 1"  sound="src: #audio0; on: targetFound">
       <a-entity rotation="90 0 0" gltf-model="#0" scale="0.0025 0.0025 0.0025">
-        <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-        </a-sound>    </a-entity>
+         </a-entity>
 </a-entity>
 
   <a-entity id="target2" mindar-image-target="targetIndex: 2">
     <a-entity rotation="90 0 0" gltf-model="#2" scale="0.25 0.25 0.25">
-      <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-      </a-sound>    </a-entity>
+ </a-entity>
   </a-entity>
 
 <a-entity id="target3" mindar-image-target="targetIndex: 3">
   <a-entity rotation="90 0 0" gltf-model="#3" scale="0.25 0.25 0.25">
-    <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-    </a-sound>    </a-entity>
+   </a-entity>
 </a-entity>
 
 <a-entity id="target4" mindar-image-target="targetIndex: 4">
   <a-entity rotation="90 0 0" gltf-model="#4" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target5" mindar-image-target="targetIndex: 5">
   <a-entity rotation="90 0 0" gltf-model="#5" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target6" mindar-image-target="targetIndex: 6">
   <a-entity rotation="90 0 0" gltf-model="#6" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target7" mindar-image-target="targetIndex: 7">
   <a-entity rotation="90 0 0" gltf-model="#7" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target8" mindar-image-target="targetIndex: 8">
   <a-entity rotation="90 0 0" gltf-model="#8" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target9" mindar-image-target="targetIndex: 9">
   <a-entity rotation="90 0 0" gltf-model="#9" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target10" mindar-image-target="targetIndex: 10">
   <a-entity rotation="90 0 0" gltf-model="#10" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target11" mindar-image-target="targetIndex: 11">
   <a-entity rotation="90 0 0" gltf-model="#11" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target12" mindar-image-target="targetIndex: 12">
   <a-entity rotation="90 0 0" gltf-model="#12" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target13" mindar-image-target="targetIndex: 13">
   <a-entity rotation="90 0 0" gltf-model="#13" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target14" mindar-image-target="targetIndex: 14">
   <a-entity rotation="90 0 0" gltf-model="#14" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target15" mindar-image-target="targetIndex: 15">
   <a-entity rotation="90 0 0" gltf-model="#15" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 
