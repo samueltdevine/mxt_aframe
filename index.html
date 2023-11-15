@@ -1,8 +1,10 @@
 <html>
   <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.6/dist/aframe-transparent-video-shader.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
@@ -26,12 +28,31 @@
   })
       </script>
     <script>
+
+
       document.addEventListener("DOMContentLoaded", function() {
 	const sceneEl = document.querySelector('a-scene');
 	let arSystem;
 	sceneEl.addEventListener('loaded', function () {
 	  arSystem = sceneEl.systems["mindar-image-system"];
 	});
+
+  const aCanvas = document.getElementsByClassName("a-canvas")
+
+  function startAR(){
+  const header = document.getElementById('header')
+  const canvas = document.getElementById('canvas')
+  header.style.display = "none"
+  // aCanvas.style.display = "block"
+  arSystem.start()
+}
+
+
+
+const startButton = document.getElementById("startButton")
+startButton.addEventListener('click', startAR)
+
+
 	const target0 = document.querySelector('#target0');
 	const target1 = document.querySelector('#target1');
 	const target2 = document.querySelector('#target2');
@@ -57,25 +78,212 @@
 	  // console.log("MindAR failed to start")
 	});
 	// detect target found
+  var audio0 = new Audio('/public/0.mp3');
 	target0.addEventListener("targetFound", event => {
-    const sound =  target0.components.sound
-    console.log("target found", sound);
-    sound.playSound()
-
+  audio0.play();
   });
-	// detect target lost
 	target0.addEventListener("targetLost", event => {
-    target0.components.sound.pauseSound()
+    audio0.pause()
+	});
 
-	  console.log("target lost");
+  // var audio1 = new Audio('/public/1.mp3');
+	// target1.addEventListener("targetFound", event => {
+  // audio1.play();
+  // });
+	// target1.addEventListener("targetLost", event => {
+  //   audio1.pause()
+	// });
+
+  // var audio2 = new Audio('/public/2.mp3');
+	// target2.addEventListener("targetFound", event => {
+  // audio2.play();
+  // });
+	// target2.addEventListener("targetLost", event => {
+  //   audio2.pause()
+	// });
+
+  var audio3 = new Audio('/public/3.mp3');
+	target3.addEventListener("targetFound", event => {
+  audio3.play();
+  });
+	target3.addEventListener("targetLost", event => {
+    audio3.pause()
+	});
+
+  var audio4 = new Audio('/public/4.mp3');
+	target4.addEventListener("targetFound", event => {
+  audio4.play();
+  });
+	target4.addEventListener("targetLost", event => {
+    audio4.pause()
+	});
+
+  var audio5 = new Audio('/public/5.mp3');
+	target5.addEventListener("targetFound", event => {
+  audio5.play();
+  });
+	target5.addEventListener("targetLost", event => {
+    audio5.pause()
+	});
+
+  var audio6 = new Audio('/public/6.mp3');
+	target6.addEventListener("targetFound", event => {
+  audio6.play();
+  });
+	target6.addEventListener("targetLost", event => {
+    audio6.pause()
+	});
+
+  var audio7 = new Audio('/public/7.mp3');
+	target7.addEventListener("targetFound", event => {
+  audio7.play();
+  });
+	target7.addEventListener("targetLost", event => {
+    audio7.pause()
+	});
+
+  var audio8 = new Audio('/public/8.mp3');
+	target8.addEventListener("targetFound", event => {
+  audio8.play();
+  });
+	target8.addEventListener("targetLost", event => {
+    audio8.pause()
+	});
+
+  var audio9 = new Audio('/public/9.mp3');
+	target9.addEventListener("targetFound", event => {
+  audio9.play();
+  });
+	target9.addEventListener("targetLost", event => {
+    audio9.pause()
+	});
+
+  var audio10 = new Audio('/public/10.mp3');
+	target10.addEventListener("targetFound", event => {
+  audio10.play();
+  });
+	target10.addEventListener("targetLost", event => {
+    audio10.pause()
+	});
+
+  var audio11 = new Audio('/public/11.mp3');
+	target11.addEventListener("targetFound", event => {
+  audio11.play();
+  });
+	target11.addEventListener("targetLost", event => {
+    audio11.pause()
+	});
+
+  var audio12 = new Audio('/public/12.mp3');
+	target12.addEventListener("targetFound", event => {
+  audio12.play();
+  });
+	target12.addEventListener("targetLost", event => {
+    audio12.pause()
+	});
+
+  var audio13 = new Audio('/public/13.mp3');
+	target13.addEventListener("targetFound", event => {
+  audio13.play();
+  });
+	target13.addEventListener("targetLost", event => {
+    audio13.pause()
+	});
+
+  var audio14 = new Audio('/public/14.mp3');
+	target14.addEventListener("targetFound", event => {
+  audio14.play();
+  });
+	target14.addEventListener("targetLost", event => {
+    audio14.pause()
+	});
+
+  var audio15 = new Audio('/public/15.mp3');
+	target15.addEventListener("targetFound", event => {
+  audio15.play();
+  });
+	target15.addEventListener("targetLost", event => {
+    audio15.pause()
 	});
 
       });
     </script>
+      <style>
+      
+        body {
+    margin: 0;
+      font-family: "sofia-pro", Futura, sans-serif;
+      }
+        #container {
+        
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+        }
+        #control {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+        }
+      .header-box{
+        background-position: center;
+        background-image: url("/public/MXT_CLM_Kickstarter_Title_MJ_03.gif");
+        background-size:contain;
+        background-repeat: no-repeat;
+        width: 75vw;
+        height: 200px;
+      }
+      .canvas{
+        display: none;
+      }
+      .a-canvas{
+        z-index: -1;
+      }
+      .header {
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .flex{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .button{
+        font-size: 36px;
+        border: 0px dashed black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    cursor: pointer;
+      }
+      .button:hover{
+        border-color: orange;
+        color: orange;
+      }
+      
+      </style>
   </head>
   <body>
+    <div
+        class="flex"
+        id="header"
+        style="display: flex;"
+      >
+        <div class="header-box"></div>
+        <div>
+          <button  class="button" id="startButton">
+            Start
+          </button>
+        </div>
+        <div></div>
+      </div>
+     
     <a-scene renderer="antialias: true;
-    colorManagement: true;" mindar-image="imageTargetSrc: ./targets.mind; filterMinCF:0.00025; filterBeta: 0.0008" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    colorManagement: true;" mindar-image="autoStart: false; imageTargetSrc: ./targets.mind; filterMinCF:0.00025; filterBeta: 0.0008" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
         <!-- <a-asset-item id="0" src="/public/0_anim.gltf"></a-asset-item> -->
         <a-asset-item id="1" src="/public/1.gltf"></a-asset-item>
@@ -93,10 +301,8 @@
         <a-asset-item id="13" src="/public/13.gltf"></a-asset-item>
         <a-asset-item id="14" src="/public/14.gltf"></a-asset-item>
         <a-asset-item id="15" src="/public/15.gltf"></a-asset-item>
-        <audio id="audio0" src="/public/0.mp3" preload="auto"></audio>
+        <!-- <audio id="audio0" src="/public/0.mp3" preload="auto"></audio> -->
         
-        <a-asset-item id="bearModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/band-example/bear/scene.gltf"></a-asset-item>
-        <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -110,97 +316,71 @@
           </a-sound>    </a-entity>
         </a-entity>
 
-    <a-entity id="target1" mindar-image-target="targetIndex: 1">
+    <a-entity id="target1" mindar-image-target="targetIndex: 1"  sound="src: #audio0; on: targetFound">
       <a-entity rotation="90 0 0" gltf-model="#0" scale="0.0025 0.0025 0.0025">
-        <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-        </a-sound>    </a-entity>
+         </a-entity>
 </a-entity>
 
   <a-entity id="target2" mindar-image-target="targetIndex: 2">
     <a-entity rotation="90 0 0" gltf-model="#2" scale="0.25 0.25 0.25">
-      <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-      </a-sound>    </a-entity>
+ </a-entity>
   </a-entity>
 
 <a-entity id="target3" mindar-image-target="targetIndex: 3">
   <a-entity rotation="90 0 0" gltf-model="#3" scale="0.25 0.25 0.25">
-    <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-    </a-sound>    </a-entity>
+   </a-entity>
 </a-entity>
 
 <a-entity id="target4" mindar-image-target="targetIndex: 4">
   <a-entity rotation="90 0 0" gltf-model="#4" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target5" mindar-image-target="targetIndex: 5">
   <a-entity rotation="90 0 0" gltf-model="#5" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target6" mindar-image-target="targetIndex: 6">
   <a-entity rotation="90 0 0" gltf-model="#6" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target7" mindar-image-target="targetIndex: 7">
   <a-entity rotation="90 0 0" gltf-model="#7" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target8" mindar-image-target="targetIndex: 8">
   <a-entity rotation="90 0 0" gltf-model="#8" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target9" mindar-image-target="targetIndex: 9">
   <a-entity rotation="90 0 0" gltf-model="#9" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target10" mindar-image-target="targetIndex: 10">
   <a-entity rotation="90 0 0" gltf-model="#10" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target11" mindar-image-target="targetIndex: 11">
   <a-entity rotation="90 0 0" gltf-model="#11" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target12" mindar-image-target="targetIndex: 12">
   <a-entity rotation="90 0 0" gltf-model="#12" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target13" mindar-image-target="targetIndex: 13">
   <a-entity rotation="90 0 0" gltf-model="#13" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target14" mindar-image-target="targetIndex: 14">
   <a-entity rotation="90 0 0" gltf-model="#14" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 <a-entity id="target15" mindar-image-target="targetIndex: 15">
   <a-entity rotation="90 0 0" gltf-model="#15" scale="0.25 0.25 0.25"></a-entity>
-  <a-sound src="src: url(public/0.mp3)" volume="0.1" on:>
-  </a-sound>
 </a-entity>
 
 
     </a-scene>
+
   </body>
 </html>
