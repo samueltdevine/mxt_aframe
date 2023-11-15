@@ -5,6 +5,26 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.6/dist/aframe-transparent-video-shader.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script>
+      AFRAME.registerComponent('move', {
+    init: function() {
+      // wait until the model is loaded
+      this.el.addEventListener("model-loaded", evt => {
+        const mixer = new THREE.AnimationMixer(this.el.components['gltf-model'].model);
+        const clips = this.el.components['gltf-model'].model.animations[0];
+        mixer.clipAction(clips).play();
+        // "expose" the animation mixer
+        this.mixer = mixer;
+      })
+    },
+    // on each render loop (actually before each render loop)
+    tick: function(t, dt) {
+      if (!this.mixer) return; // if the mixer exists
+      this.mixer.update(dt / 1000) // update it with the delta time
+    }
+  })
+      </script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
 	const sceneEl = document.querySelector('a-scene');
@@ -28,29 +48,7 @@
 	const target13 = document.querySelector('#target13');
 	const target14 = document.querySelector('#target14');
 	const target15 = document.querySelector('#target15');
-	// const examplePlane = document.querySelector('#example-plane');
-	// const startButton = document.querySelector("#example-start-button");
-	// const stopButton = document.querySelector("#example-stop-button");
-	// const pauseButton = document.querySelector("#example-pause-button");
-	// const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
-	// const unpauseButton = document.querySelector("#example-unpause-button");
-	// startButton.addEventListener('click', () => {
-	//   console.log("start");
-	//   arSystem.start(); // start AR 
-	// });
-	// stopButton.addEventListener('click', () => {
-	//   arSystem.stop(); // stop AR 
-	// });
-	// pauseButton.addEventListener('click', () => {
-	//   arSystem.pause(); // pause AR, pause video
-	// });
-	// pauseKeepVideoButton.addEventListener('click', () => {
-	//   arSystem.pause(true); // pause AR, keep video
-	// });
-	// unpauseButton.addEventListener('click', () => {
-	//   arSystem.unpause(); // unpause AR and video
-	// });
-	// arReady event triggered when ready
+
 	sceneEl.addEventListener("arReady", (event) => {
 	  // console.log("MindAR is ready")
 	});
@@ -76,9 +74,10 @@
     </script>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc: ./targets.mind; filterMinCF:0.00025; filterBeta: 0.0008" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene renderer="antialias: true;
+    colorManagement: true;" mindar-image="imageTargetSrc: ./targets.mind; filterMinCF:0.00025; filterBeta: 0.0008" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
-        <a-asset-item id="0" src="/public/0.gltf"></a-asset-item>
+        <!-- <a-asset-item id="0" src="/public/0_anim.gltf"></a-asset-item> -->
         <a-asset-item id="1" src="/public/1.gltf"></a-asset-item>
         <a-asset-item id="2" src="/public/2.gltf"></a-asset-item>
         <a-asset-item id="3" src="/public/3.gltf"></a-asset-item>
@@ -103,7 +102,10 @@
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity id="target0" mindar-image-target="targetIndex: 0" sound="src: #audio0">
-        <a-entity rotation="90 0 0" gltf-model="#0" scale="0.0025 0.0025 0.0025">
+
+        <!-- <a-entity rotation="90 0 0" fbx-model="src: url(/public/0.fbx);" scale="0.15 0.15 0.15"></a-entity> -->
+        <!-- <a-entity id="model" rotation="90 0 0" gltf-model="#0" scale="0.15 0.15 0.15"> -->
+          <a-entity rotation="90 0 0" gltf-model="/public/0_anim.gltf" move position=".5 0.5 -5" scale="0.5 0.5 0.5"></a-entity>                     
           <!-- <a-sound src="src: url(public/0.mp3)" volume="0.1" on:> -->
           </a-sound>    </a-entity>
         </a-entity>
