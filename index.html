@@ -108,6 +108,14 @@ startButton.addEventListener('click', startAR)
   //   audio2.pause()
 	// });
 
+  var audio4 = new Audio('/public/4.mp3');
+	target4.addEventListener("targetFound", event => {
+  audio4.play();
+  });
+	target3.addEventListener("targetLost", event => {
+    audio3.pause()
+	});
+
   var audio3 = new Audio('/public/3.mp3');
 	target3.addEventListener("targetFound", event => {
   audio3.play();
@@ -352,7 +360,7 @@ startButton.addEventListener('click', startAR)
 <a-entity id="target5" mindar-image-target="targetIndex: 5">
   <!-- <a-entity rotation="90 0 0" gltf-model="#7" scale="0.25 0.25 0.25"></a-entity> -->
 
-  <a-entity rotation="90 0 0" position="0 0 0" gltf-model="/public/5.gltf" scale="10 10 10"></a-entity>
+  <a-entity rotation="90 0 0" position="0 0 0" gltf-model="/public/5.gltf" scale="30 30 30"></a-entity>
 
 </a-entity>
 
