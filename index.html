@@ -35,6 +35,12 @@
 	let arSystem;
 	sceneEl.addEventListener('loaded', function () {
 	  arSystem = sceneEl.systems["mindar-image-system"];
+    sceneEl.object3D.traverse((o) => {
+    if (o.isMesh && o.material.map)  {
+      o.material.map.encoding = THREE.sRGBEncoding;
+      o.material.needsUpdate = true;
+    }
+  });
 	});
 
   const aCanvas = document.getElementsByClassName("a-canvas")
@@ -283,7 +289,7 @@ startButton.addEventListener('click', startAR)
       </div>
      
     <a-scene renderer="antialias: true;
-    colorManagement: true;" mindar-image="autoStart: false; imageTargetSrc: ./targets.mind; filterMinCF:0.00025; filterBeta: 0.0008" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    colorManagement: false;" mindar-image="autoStart: false; imageTargetSrc: ./targets.mind; filterMinCF:0.00025; filterBeta: 0.0008" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
         <!-- <a-asset-item id="0" src="/public/0_anim.gltf"></a-asset-item> -->
         <a-asset-item id="1" src="/public/1.gltf"></a-asset-item>
@@ -311,13 +317,17 @@ startButton.addEventListener('click', startAR)
 
         <!-- <a-entity rotation="90 0 0" fbx-model="src: url(/public/0.fbx);" scale="0.15 0.15 0.15"></a-entity> -->
         <!-- <a-entity id="model" rotation="90 0 0" gltf-model="#0" scale="0.15 0.15 0.15"> -->
-          <a-entity rotation="90 0 0" gltf-model="/public/0_anim.gltf" move position="0 0 0" scale="0.25 0.25 0.25"></a-entity>                     
+          <a-entity rotation="90 0 0" gltf-model="/public/0a.gltf" move position="0 -.1 0" scale="3.5 3.5 3.5"></a-entity>                     
+          <a-entity rotation="90 0 0" gltf-model="/public/0b.gltf" move position="-0.35 -.1 0" scale="3.5 3.5 3.5"></a-entity>                     
+          <a-entity rotation="90 0 0" gltf-model="/public/0e.gltf" move position="-0.2 .15 0" scale="3.5 3.5 3.5"></a-entity>                     
+          <a-entity rotation="90 0 0" gltf-model="/public/0c.gltf" move position="0.2 .15 0" scale="3.5 3.5 3.5"></a-entity>                     
+          <a-entity rotation="90 0 0" gltf-model="/public/0d.gltf" move position="0.35 -.15 0" scale="3.5 3.5 3.5"></a-entity>                     
           <!-- <a-sound src="src: url(public/0.mp3)" volume="0.1" on:> -->
           </a-sound>    </a-entity>
         </a-entity>
 
     <a-entity id="target1" mindar-image-target="targetIndex: 1"  sound="src: #audio0; on: targetFound">
-      <a-entity rotation="90 0 0" gltf-model="#0" scale="0.0025 0.0025 0.0025">
+      <!-- <a-entity rotation="90 0 0" gltf-model="/public/0a.gltf" move position="0 -.1 0" scale="3.5 3.5 3.5"></a-entity>                      -->
          </a-entity>
 </a-entity>
 
@@ -336,7 +346,7 @@ startButton.addEventListener('click', startAR)
 </a-entity>
 
 <a-entity id="target5" mindar-image-target="targetIndex: 5">
-  <a-entity rotation="90 0 0" gltf-model="#5" scale="0.25 0.25 0.25"></a-entity>
+  <a-entity rotation="90 0 0" gltf-model="#5" scale="2 2 2"></a-entity>
 </a-entity>
 
 <a-entity id="target6" mindar-image-target="targetIndex: 6">
