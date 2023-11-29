@@ -160,7 +160,7 @@
 		"byteStride":32
 	}],
 	"nodes":[{
-		"name":"pinkCharTris_GRP.1",
+		"name":"pinkCharTris_GRP",
 		"children":[1,
 		2,
 		3,
@@ -763,9 +763,9 @@
 	},
 	{
 		"pbrMetallicRoughness":{
-			"baseColorFactor":[0.2627450980392157,
-			0.3137254901960784,
-			0.47843137254901965,
+			"baseColorFactor":[0.8,
+			0.8,
+			0.8,
 			1.0],
 			"metallicFactor":0.0,
 			"roughnessFactor":0.5

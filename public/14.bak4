@@ -631,18 +631,18 @@
 	}],
 	"materials":[{
 		"pbrMetallicRoughness":{
-			"baseColorFactor":[0.28140000000000006,
-			0.37283529411764679,
-			0.67,
+			"baseColorFactor":[0.4042105323389958,
+			0.4631579016384326,
+			0.7200000107288361,
 			1.0],
-			"metallicFactor":0.0,
-			"roughnessFactor":0.5
+			"metallicFactor":1.0,
+			"roughnessFactor":1.0
 		},
 		"emissiveFactor":[0.0,
 		0.0,
 		0.0],
 		"alphaMode":"OPAQUE",
-		"name":"blueMTL",
+		"name":"lambert1",
 		"doubleSided":false
 	}]
 }
