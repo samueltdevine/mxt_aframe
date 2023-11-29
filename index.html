@@ -333,12 +333,12 @@ startButton.addEventListener('click', startAR)
          </a-entity>
 </a-entity>
 
-  <a-entity id="target2" mindar-image-target="targetIndex: 2">
-    <a-entity rotation="90 0 0" position="0.1 -.3 0" gltf-model="#2" scale="3.5 3.5 3.5">
+  <a-entity id="target2" mindar-image-target="targetIndex: 2" sound="src: #audio2; on: targetFound">
+    <a-entity rotation="90 0 0" position="0.1 0 0" gltf-model="#2" scale="3.5 3.5 3.5">
  </a-entity>
   </a-entity>
 
-<a-entity id="target3" mindar-image-target="targetIndex: 3">
+<a-entity id="target3" mindar-image-target="targetIndex: 3" sound="src: #audio0; on: targetFound">
   <a-entity rotation="-90 0 0" position="-.05 .1 .05" gltf-model="/public/3.gltf" scale="3.5 3.5 3.5">
 
 
