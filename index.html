@@ -92,21 +92,23 @@ startButton.addEventListener('click', startAR)
     audio0.pause()
 	});
 
-  // var audio1 = new Audio('/public/1.mp3');
-	// target1.addEventListener("targetFound", event => {
-  // audio1.play();
-  // });
-	// target1.addEventListener("targetLost", event => {
-  //   audio1.pause()
-	// });
 
-  // var audio2 = new Audio('/public/2.mp3');
-	// target2.addEventListener("targetFound", event => {
-  // audio2.play();
-  // });
-	// target2.addEventListener("targetLost", event => {
-  //   audio2.pause()
-	// });
+
+  var audio2 = new Audio('/public/2.mp3');
+	target2.addEventListener("targetFound", event => {
+  audio2.play();
+  });
+	target2.addEventListener("targetLost", event => {
+    audio2.pause()
+	});
+
+  var audio3 = new Audio('/public/3.mp3');
+	target3.addEventListener("targetFound", event => {
+  audio3.play();
+  });
+	target3.addEventListener("targetLost", event => {
+    audio3.pause()
+	});
 
   var audio4 = new Audio('/public/4.mp3');
 	target4.addEventListener("targetFound", event => {
@@ -335,15 +337,13 @@ startButton.addEventListener('click', startAR)
 
 
   <a-entity id="target2" mindar-image-target="targetIndex: 2" >
-    <a-entity rotation="90 0 0" position="0.1 0 0" gltf-model="#2" scale="3.5 3.5 3.5">
- </a-entity>
-
+    <a-entity rotation="90 0 0" position="0.1 0 0" gltf-model="#2" scale="3.5 3.5 3.5"></a-entity>
   </a-entity>
 
 <a-entity id="target3" mindar-image-target="targetIndex: 3" >
-  <a-entity rotation="-90 0 0" position="-.05 .1 .05" gltf-model="/public/3.gltf" scale="3.5 3.5 3.5">
+  <a-entity rotation="-90 0 0" position="-.05 .1 .05" gltf-model="/public/3.gltf" scale="3.5 3.5 3.5"></a-entity>
 
-</a-entity>
+
 
 <a-entity id="target4" mindar-image-target="targetIndex: 4">
   <a-entity rotation="90 0 0" position="0 0 0" gltf-model="/public/4.gltf" scale="30 30 30">
