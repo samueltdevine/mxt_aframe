@@ -27,6 +27,7 @@
     }
   })
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
     <script>
 
 
@@ -84,7 +85,7 @@ startButton.addEventListener('click', startAR)
 	  // console.log("MindAR failed to start")
 	});
 	// detect target found
-  var audio0 = new Audio('/public/0.mp3');
+  var audio0 = new Howl({ src: ["/public/0.mp3"]})
 	target0.addEventListener("targetFound", event => {
   audio0.play();
   });
@@ -92,7 +93,10 @@ startButton.addEventListener('click', startAR)
     audio0.pause()
 	});
 
-  var audio3 = new Audio('/public/3.mp3');
+
+  
+
+  var audio3 = new Howl({ src: ["/public/3.mp3"]})
 	target3.addEventListener("targetFound", event => {
   audio3.play();
   });
@@ -103,7 +107,7 @@ startButton.addEventListener('click', startAR)
 
 
 
-  var audio2 = new Audio('/public/2.mp3');
+  var audio2 = new Howl({ src: ["/public/2.mp3"]})
 	target2.addEventListener("targetFound", event => {
   audio2.play();
   });
@@ -113,7 +117,7 @@ startButton.addEventListener('click', startAR)
 
  
 
-  var audio4 = new Audio('/public/4.mp3');
+  var audio4 = new Howl({ src: ["/public/4.mp3"]})
 	target4.addEventListener("targetFound", event => {
   audio4.play();
   });
@@ -123,7 +127,7 @@ startButton.addEventListener('click', startAR)
 
  
 
-  var audio4 = new Audio('/public/4.mp3');
+  var audio4 = new Howl({ src: ["/public/4.mp3"]})
 	target4.addEventListener("targetFound", event => {
   audio4.play();
   });
@@ -131,7 +135,7 @@ startButton.addEventListener('click', startAR)
     audio4.pause()
 	});
 
-  var audio5 = new Audio('/public/5.mp3');
+  var audio5 = new Howl({ src: ["/public/5.mp3"]})
 	target5.addEventListener("targetFound", event => {
   audio5.play();
   });
@@ -139,7 +143,7 @@ startButton.addEventListener('click', startAR)
     audio5.pause()
 	});
 
-  var audio6 = new Audio('/public/6.mp3');
+  var audio6 = new Howl({ src: ["/public/6.mp3"]})
 	target6.addEventListener("targetFound", event => {
   audio6.play();
   });
@@ -147,7 +151,7 @@ startButton.addEventListener('click', startAR)
     audio6.pause()
 	});
 
-  var audio7 = new Audio('/public/7.mp3');
+  var audio7 = new Howl({ src: ["/public/7.mp3"]})
 	target7.addEventListener("targetFound", event => {
   audio7.play();
   });
@@ -155,7 +159,7 @@ startButton.addEventListener('click', startAR)
     audio7.pause()
 	});
 
-  var audio8 = new Audio('/public/8.mp3');
+  var audio8 = new Howl({ src: ["/public/8.mp3"]})
 	target8.addEventListener("targetFound", event => {
   audio8.play();
   });
@@ -163,7 +167,7 @@ startButton.addEventListener('click', startAR)
     audio8.pause()
 	});
 
-  var audio9 = new Audio('/public/9.mp3');
+  var audio9 = new Howl({ src: ["/public/9.mp3"]})
 	target9.addEventListener("targetFound", event => {
   audio9.play();
   });
@@ -171,7 +175,7 @@ startButton.addEventListener('click', startAR)
     audio9.pause()
 	});
 
-  var audio10 = new Audio('/public/10.mp3');
+  var audio10 = new Howl({src: ['/public/10.mp3']});
 	target10.addEventListener("targetFound", event => {
   audio10.play();
   });
@@ -179,7 +183,7 @@ startButton.addEventListener('click', startAR)
     audio10.pause()
 	});
 
-  var audio11 = new Audio('/public/11.mp3');
+  var audio11 = new Howl({src: ['/public/11.mp3']});
 	target11.addEventListener("targetFound", event => {
   audio11.play();
   });
@@ -187,7 +191,7 @@ startButton.addEventListener('click', startAR)
     audio11.pause()
 	});
 
-  var audio12 = new Audio('/public/12.mp3');
+  var audio12 = new Howl({src: ['/public/12.mp3']});
 	target12.addEventListener("targetFound", event => {
   audio12.play();
   });
@@ -195,7 +199,7 @@ startButton.addEventListener('click', startAR)
     audio12.pause()
 	});
 
-  var audio13 = new Audio('/public/13.mp3');
+  var audio13 = new Howl({src: ['/public/13.mp3']});
 	target13.addEventListener("targetFound", event => {
   audio13.play();
   });
@@ -203,7 +207,7 @@ startButton.addEventListener('click', startAR)
     audio13.pause()
 	});
 
-  var audio14 = new Audio('/public/14.mp3');
+  var audio14 = new Howl({src: ['/public/14.mp3']});
 	target14.addEventListener("targetFound", event => {
   audio14.play();
   });
@@ -211,7 +215,7 @@ startButton.addEventListener('click', startAR)
     audio14.pause()
 	});
 
-  var audio15 = new Audio('/public/15.mp3');
+  var audio15 = new Howl({src: ['/public/15.mp3']});
 	target15.addEventListener("targetFound", event => {
   audio15.play();
   });
@@ -322,8 +326,6 @@ startButton.addEventListener('click', startAR)
 
       <a-entity id="target0" mindar-image-target="targetIndex: 0">
 
-        <!-- <a-entity rotation="90 0 0" fbx-model="src: url(/public/0.fbx);" scale="0.15 0.15 0.15"></a-entity> -->
-        <!-- <a-entity id="model" rotation="90 0 0" gltf-model="#0" scale="0.15 0.15 0.15"> -->
           <a-entity rotation="90 0 0" gltf-model="/public/0a.gltf" move position="0 -.1 0" scale="3.5 3.5 3.5"></a-entity>                     
           <a-entity rotation="90 0 0" gltf-model="/public/0b.gltf" move position="-0.35 -.1 0" scale="3.5 3.5 3.5"></a-entity>                     
           <a-entity rotation="90 0 0" gltf-model="/public/0e.gltf" move position="-0.2 .15 0" scale="3.5 3.5 3.5"></a-entity>                     
