@@ -266,11 +266,12 @@ startButton.style.display = "block"}
         }
       .header-box{
         background-position: center;
-        background-image: url("/public/MXT_CLM_Kickstarter_Title_MJ_03.gif");
+        background-image: url("/public/MXT_CLM_Kickstarter_Title_SD_04.gif");
         background-size:contain;
         background-repeat: no-repeat;
         width: 75vw;
-        height: 200px;
+        height: 100px;
+        margin: 20px;
       }
       .canvas{
         display: none;
@@ -305,6 +306,14 @@ startButton.style.display = "block"}
     padding: 14px 28px;
     cursor: pointer;
       }
+      .instructions{
+        margin-left: 15px;
+        margin-right: 15px;
+
+        text-align: center;
+        align-items: center;
+        font-size: small;
+      }
       .button:hover{
         border-color: orange;
         color: orange;
@@ -320,7 +329,7 @@ startButton.style.display = "block"}
       >
         <div class="header-box"></div>
         <div style="display: flex; flex-direction: column;">
-          <div id="instructions">If you are viewing on a mobile device, set silent-mode or vibrate-mode to "off" to hear the read-along.</div>
+          <div id="instructions" class="instructions">If you are viewing on a mobile device, set silent-mode or vibrate-mode to "off" to hear the read-along.</div>
           <button class="button" id="understandButton">I understand</button>
           <button  class="button-start" id="startButton" style="display: none;">
             Start
