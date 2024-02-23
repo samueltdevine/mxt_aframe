@@ -106,7 +106,7 @@ startButton.style.display = "block"}
     audio0.pause()
 	});
 
-  var audio1 = new Howl({ src: ["/public/020.mp3"]})
+  var audio1 = new Howl({ src: ["/public/020.mp3"], loop:true})
 	target1.addEventListener("targetFound", event => {
   audio1.play();
   });
@@ -115,7 +115,7 @@ startButton.style.display = "block"}
 	});
 
   
-  var audio2 = new Howl({ src: ["/public/030.mp3"]})
+  var audio2 = new Howl({ src: ["/public/030.mp3"], loop:true})
 	target2.addEventListener("targetFound", event => {
   audio2.play();
   });
@@ -123,7 +123,7 @@ startButton.style.display = "block"}
     audio2.pause()
 	});
 
-    var audio4 = new Howl({ src: ["/public/050.mp3"]})
+    var audio4 = new Howl({ src: ["/public/050.mp3"], loop:true})
 	target4.addEventListener("targetFound", event => {
   audio4.play();
   });
@@ -132,7 +132,7 @@ startButton.style.display = "block"}
 	});
 
 
-  var audio5 = new Howl({ src: ["/public/070.mp3"]})
+  var audio5 = new Howl({ src: ["/public/070.mp3"], loop:true})
 	target5.addEventListener("targetFound", event => {
   audio5.play();
   });
