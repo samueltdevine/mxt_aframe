@@ -106,27 +106,39 @@ startButton.style.display = "block"}
     audio0.pause()
 	});
 
-  // var audio1 = new Howl({ src: ["/public/0.mp3"]})
-	// target1.addEventListener("targetFound", event => {
-  // audio1.play();
-  // });
-	// target1.addEventListener("targetLost", event => {
-  //   audio1.pause()
-	// });
-
+  var audio1 = new Howl({ src: ["/public/020.mp3"]})
+	target1.addEventListener("targetFound", event => {
+  audio1.play();
+  });
+	target1.addEventListener("targetLost", event => {
+    audio1.pause()
+	});
 
   
+  var audio2 = new Howl({ src: ["/public/030.mp3"]})
+	target2.addEventListener("targetFound", event => {
+  audio2.play();
+  });
+	target2.addEventListener("targetLost", event => {
+    audio2.pause()
+	});
 
-  // var audio3 = new Howl({ src: ["/public/3.mp3"]})
-	// target3.addEventListener("targetFound", event => {
-  // audio3.play();
-  // });
-	// target3.addEventListener("targetLost", event => {
-  //   audio3.pause()
-	// });
-  
+    var audio4 = new Howl({ src: ["/public/050.mp3"]})
+	target4.addEventListener("targetFound", event => {
+  audio4.play();
+  });
+	target4.addEventListener("targetLost", event => {
+    audio4.pause()
+	});
 
 
+  var audio5 = new Howl({ src: ["/public/070.mp3"]})
+	target5.addEventListener("targetFound", event => {
+  audio5.play();
+  });
+	target5.addEventListener("targetLost", event => {
+    audio5.pause()
+	});
 
   var audio6 = new Howl({ src: ["/public/title.mp3"]})
 	target6.addEventListener("targetFound", event => {
@@ -478,7 +490,6 @@ startButton.style.display = "block"}
   animation-mixer="clip: *;"
   gltf-model="src: url(/public/130.gltf);">
 </a-entity>
-  <!-- <a-entity rotation="90 0 0" gltf-model="#8" scale="20 20 20"></a-entity> -->
 </a-entity>
 
 <a-entity id="target14" mindar-image-target="targetIndex: 14">
@@ -488,7 +499,6 @@ startButton.style.display = "block"}
   animation-mixer="clip: *;"
   gltf-model="src: url(/public/140.gltf);">
 </a-entity>
-  <!-- <a-entity rotation="90 0 0" position="-.1 0 0" gltf-model="#9" scale="18 18 18"></a-entity> -->
 </a-entity>
 
 <a-entity id="target15" mindar-image-target="targetIndex: 15">
@@ -498,7 +508,6 @@ startButton.style.display = "block"}
   animation-mixer="clip: *;"
   gltf-model="src: url(/public/150.gltf);">
 </a-entity>
-  <!-- <a-entity rotation="90 0 0" position=".125 -.05 0" gltf-model="#10" scale="15 15 15"></a-entity> -->
 </a-entity>
 
 <a-entity id="target16" mindar-image-target="targetIndex: 16">
@@ -508,7 +517,6 @@ startButton.style.display = "block"}
   animation-mixer="clip: *;"
   gltf-model="src: url(/public/160.gltf);">
 </a-entity>
-  <!-- <a-entity rotation="90 0 0" gltf-model="#11" scale="35 35 35"></a-entity> -->
 </a-entity>
 
 <a-entity id="target17" mindar-image-target="targetIndex: 17">
@@ -518,7 +526,6 @@ startButton.style.display = "block"}
   animation-mixer="clip: *;"
   gltf-model="src: url(/public/170.gltf);">
 </a-entity>
-  <!-- <a-entity rotation="90 0 0"  gltf-model="#12" scale="18 18 18"></a-entity> -->
 </a-entity>
 
 <a-entity id="target18" mindar-image-target="targetIndex: 18">
